@@ -16,12 +16,12 @@
 
 .todoItem__name {
   font-size: 2rem;
-  color: red;
+  color: #92140c;
   font-weight: bold;
 }
 
 .todoItem__name--done {
-  color: limegreen;
+  color: #36d136;
   font-weight: normal;
   text-decoration: line-through;
 }
@@ -35,12 +35,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 50px;
-  border: 1px solid black;
-  background: transparent;
   font-size: 1.5rem;
-  color: red;
-  font-weight: bold;
+  color: #92140c;
   position: absolute;
   right: 25px;
 }

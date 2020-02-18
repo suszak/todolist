@@ -4,16 +4,15 @@ import NavBar from '../../components/NavBar/NavBar'
 import ToDoList from '../../components/ToDoList/ToDoList'
 
 class Main extends Component {
-    tasksList = [
-        {name: 'First task', done: 0},
-        {name: 'Second task', done: 0}
-    ];
+    state = {
+        tasks: this.props.tasks
+    }
 
     render() {
         return(
             <main className='main'>
-                <NavBar />
-                <ToDoList tasks={this.tasksList}/>
+                <NavBar tasks={this.state.tasks} />
+                <ToDoList tasks={this.state.tasks} />
             </main>
         )
     }

@@ -3,10 +3,14 @@ import './ToDoList.css';
 import ToDoItem from '../ToDoItem/ToDoItem';
 
 class ToDoList extends Component {
+    state = {
+        tasks: this.props.tasks
+    }
+    
     render() {
         return(
             <section className='todoList'>
-                {this.props.tasks.map(task => <ToDoItem name={task.name} />)}
+                {this.state.tasks.map(task => <ToDoItem name={task} />)}
             </section>
         )
     }
