@@ -4,9 +4,9 @@ import './NavBar.css';
 class NavBar extends React.Component {
     render() {
         return(
-            <nav class="navigationBar">
-                <input type='text' value='Type your task here...' class='navigationBar__input'></input>
-                <button class='navigationBar__button'>Add task</button>
+            <nav className="navigationBar">
+                <input type='text' value='Type your task here...' className='navigationBar__input'></input>
+                <button className='navigationBar__button'>Add task</button>
             </nav>
         );
     }

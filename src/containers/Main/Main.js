@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import './Main.css';
 import NavBar from '../../components/NavBar/NavBar'
-import ToDoItem from '../../components/ToDoItem/ToDoItem'
+import ToDoList from '../../components/ToDoList/ToDoList'
 
 class Main extends Component {
+    tasksList = [
+        {name: 'First task', done: 0},
+        {name: 'Second task', done: 0}
+    ];
+
     render() {
         return(
             <main className='main'>
                 <NavBar />
-                <ToDoItem />
+                <ToDoList tasks={this.tasksList}/>
             </main>
         )
     }

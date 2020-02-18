@@ -1,1 +1,35 @@
-/* No CSS *//*# sourceMappingURL=NavBar.css.map */
+.navigationBar {
+  width: 100vw;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navigationBar__input {
+  width: 150px;
+  height: 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+}
+
+.navigationBar__button {
+  width: 75px;
+  height: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  background-color: rgba(180, 180, 180, 0.9);
+  margin-left: 20px;
+}
+/*# sourceMappingURL=NavBar.css.map */

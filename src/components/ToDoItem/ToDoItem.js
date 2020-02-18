@@ -4,7 +4,10 @@ import './ToDoItem.css';
 class ToDoItem extends React.Component {
     render() {
         return(
-            <p>ToDoItem</p>
+            <section className='todoItem'>
+                <span className='todoItem__name'>{this.props.name}</span>
+                <span className='todoItem__delete'>x</span>
+            </section>
         );
     }
 }

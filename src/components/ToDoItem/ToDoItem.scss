@@ -1,0 +1,35 @@
+.todoItem {
+    width: 100vw;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__name {
+        font-size: 2rem;
+        color: red;
+        font-weight: bold;
+        
+        &--done {
+            color: limegreen;
+            font-weight: normal;
+            text-decoration: line-through;
+        }
+    }
+
+    &__delete {
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        border: 1px solid black;
+        background: transparent;
+        font-size: 1.5rem;
+        color: red;
+        font-weight: bold;      
+        position: absolute;
+        right: 25px;  
+    }
+}

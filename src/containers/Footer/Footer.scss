@@ -1,0 +1,22 @@
+.footer {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+
+    &__text {
+        margin-right: 5px;
+    }
+
+    &__author {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+
+    &__date {
+        
+    }
+}

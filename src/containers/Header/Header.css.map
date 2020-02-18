@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAK1B;;AAHI,AAAD,cAAQ,CAAC;EACL,SAAS,EAAE,KAAK;CACnB",
     "sources": [
-        "Header.sass"
+        "Header.scss"
     ],
     "names": [],
     "file": "Header.css"
