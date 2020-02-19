@@ -21,11 +21,19 @@ class Main extends Component {
         }
     }
 
+    deleteTask = (event) => {
+        let tasksArray = this.state.tasks;
+        let newArray = tasksArray.filter(task => {
+            return (task === event.target.parentElement.parentElement.parentElement.querySelector('.todoItem__name').innerText)?"":task;
+        });
+        this.setState({tasks: newArray});
+    }
+
     render() {
         return(
             <main className='main'>
                 <NavBar state={this.state} onUpdate={this.updateValue} updateTaskList={this.updateTaskList} />
-                <ToDoList state={this.state} />
+                <ToDoList state={this.state} deleteTask={this.deleteTask} />
             </main>
         )
     }

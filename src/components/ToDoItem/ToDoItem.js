@@ -3,6 +3,7 @@ import './ToDoItem.css';
 
 class ToDoItem extends React.Component {
     state = {
+        name: this.props.name,
         done: false
     }
 
@@ -13,8 +14,8 @@ class ToDoItem extends React.Component {
     render() {
         return(
             <section className='todoItem'>
-                <span className={this.state.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={this.changeState}>{this.props.name}</span>
-                <i className='fas fa-minus-circle todoItem__delete'></i>
+                <span className={this.state.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={this.changeState} >{this.props.name}</span>
+                <span onClick={this.props.deleteTask}><i className='fas fa-minus-circle todoItem__delete'></i></span>
             </section>
         );
     }
