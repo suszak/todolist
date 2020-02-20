@@ -6,13 +6,21 @@ import ToDoList from '../../components/ToDoList/ToDoList'
 class Main extends Component {
     state = {
         tasks: this.props.tasks,
-        draft: ''
+        draft: '',
+        city: ''
     }
 
-    updateValue = (event) => {
+    // Update draft input value:
+    updateDraft = (event) => {
         this.setState({draft: event.target.value});
     }
 
+    // Update city input value:
+    updateCity = (event) => {
+        this.setState({city: event.target.value});
+    }
+
+    // Add new task:
     updateTaskList = () => {
         if(this.state.draft) {
             let tasksArray = this.state.tasks;
@@ -20,11 +28,12 @@ class Main extends Component {
                     return task.id;    
                 }
             );
-            tasksArray.push({name: this.state.draft, id: Math.max(...idArray)+1, done: false});
-            this.setState({tasks: tasksArray, draft: ''});
+            tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, done: false});
+            this.setState({tasks: tasksArray, draft: '', city: ''});
         }
     }
 
+    // Delete task:
     deleteTask = (taskId) => {
         let idArray = this.state.tasks.map(task => {
             return task.id;
@@ -38,7 +47,7 @@ class Main extends Component {
         this.setState({tasks: newArray});
     }
 
-    
+    // Change state done/todo
     changeState = (taskId) => {
         const idArray = this.state.tasks.map(task => {
             return task.id;
@@ -49,7 +58,7 @@ class Main extends Component {
 
         let newArray = this.state.tasks;
         
-        newArray[index] = {name: newArray[index].name, id: newArray[index].id, done: !newArray[index].done};
+        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, done: !newArray[index].done};
         
         this.setState({tasks: newArray});
     }
@@ -57,7 +66,7 @@ class Main extends Component {
     render() {
         return(
             <main className='main'>
-                <NavBar state={this.state} onUpdate={this.updateValue} updateTaskList={this.updateTaskList} />
+                <NavBar state={this.state} updateDraft={this.updateDraft} updateCity={this.updateCity} updateTaskList={this.updateTaskList} />
                 <ToDoList state={this.state} deleteTask={this.deleteTask} changeState={this.changeState}/>
             </main>
         )
