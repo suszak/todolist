@@ -22,14 +22,24 @@ class Main extends Component {
 
     // Add new task:
     updateTaskList = () => {
-        if(this.state.draft) {
-            let tasksArray = this.state.tasks;
-            const idArray = tasksArray.map(task => {
-                    return task.id;    
-                }
-            );
-            tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, done: false});
-            this.setState({tasks: tasksArray, draft: '', city: ''});
+        if(!this.state.draft || !this.state.city) {
+            if(!this.state.draft) {
+                document.querySelector('#inputDraft').classList.add('navigationBar__input--empty');
+            } if(!this.state.city) {
+                document.querySelector('#inputCity').classList.add('navigationBar__input--empty');
+            } 
+        } else {
+        let tasksArray = this.state.tasks;
+        const idArray = tasksArray.map(task => {
+                return task.id;    
+            }
+        );
+        
+        document.querySelector('#inputDraft').classList.remove('navigationBar__input--empty');
+        document.querySelector('#inputCity').classList.remove('navigationBar__input--empty');
+
+        tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, done: false});
+        this.setState({tasks: tasksArray, draft: '', city: ''});
         }
     }
 

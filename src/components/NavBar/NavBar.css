@@ -22,6 +22,31 @@
   background: transparent;
   color: #fff8f0;
   padding-left: 15px;
+  margin-right: 20px;
+}
+
+.navigationBar__input--empty {
+  border-bottom-color: #92140c;
+}
+
+.navigationBar__input--empty::-webkit-input-placeholder {
+  color: #92140c;
+  font-weight: bold;
+}
+
+.navigationBar__input--empty:-ms-input-placeholder {
+  color: #92140c;
+  font-weight: bold;
+}
+
+.navigationBar__input--empty::-ms-input-placeholder {
+  color: #92140c;
+  font-weight: bold;
+}
+
+.navigationBar__input--empty::placeholder {
+  color: #92140c;
+  font-weight: bold;
 }
 
 .navigationBar__button {
@@ -32,6 +57,5 @@
   border-radius: 50px;
   border: none;
   background-color: rgba(180, 180, 180, 0.9);
-  margin-left: 20px;
 }
 /*# sourceMappingURL=NavBar.css.map */
