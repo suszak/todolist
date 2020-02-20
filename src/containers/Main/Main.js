@@ -40,18 +40,18 @@ class Main extends Component {
 
     
     changeState = (taskId) => {
-        let idArray = this.state.tasks.map(task => {
+        const idArray = this.state.tasks.map(task => {
             return task.id;
+        });
+        const index = idArray.findIndex((value) => {
+            return value === taskId;
         });
 
         let newArray = this.state.tasks;
-        newArray.splice(idArray.findIndex((value) => {
-            return value === taskId;
-        }), 1);
         
-        // this.setState({tasks: newArray});
-
-        // this.setState({done: !this.state.done});
+        newArray[index] = {name: newArray[index].name, id: newArray[index].id, done: !newArray[index].done};
+        
+        this.setState({tasks: newArray});
     }
 
     render() {
