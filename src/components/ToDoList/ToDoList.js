@@ -6,7 +6,7 @@ class ToDoList extends Component {
     render() {
         return(
             <section className='todoList'>
-                {this.props.state.tasks.map(task => <ToDoItem name={task} deleteTask={this.props.deleteTask} />)}
+                {this.props.state.tasks.map((task) => <ToDoItem task={task} deleteTask={this.props.deleteTask} changeState={this.props.changeState} key={task.id}/>)}
             </section>
         )
     }

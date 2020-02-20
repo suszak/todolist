@@ -1,10 +1,14 @@
 .todoItem {
-    width: 100vw;
+    width: 90vw;
     height: 30px;
     margin-top: 10px;
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: rgba(22, 42, 85, 1);
 
     &__name {
         font-size: 2rem;
@@ -18,12 +22,15 @@
         }
     }
 
-    &__delete {
+    .svg-inline--fa.fa-w-16{
         height: 20px;
         width: 20px;
+        font-size: 1.5rem;
+    }
+
+    &__delete {
         display: flex;
         justify-content: center;
-        font-size: 1.5rem;
         color: rgba(146, 20, 12, 1);      
         position: absolute;
         right: 25px;  

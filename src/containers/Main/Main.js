@@ -16,24 +16,49 @@ class Main extends Component {
     updateTaskList = () => {
         if(this.state.draft) {
             let tasksArray = this.state.tasks;
-            tasksArray.push(this.state.draft);
+            const idArray = tasksArray.map(task => {
+                    return task.id;    
+                }
+            );
+            tasksArray.push({name: this.state.draft, id: Math.max(...idArray)+1, done: false});
             this.setState({tasks: tasksArray, draft: ''});
         }
     }
 
-    deleteTask = (event) => {
-        let tasksArray = this.state.tasks;
-        let newArray = tasksArray.filter(task => {
-            return (task === event.target.parentElement.parentElement.parentElement.querySelector('.todoItem__name').innerText)?"":task;
+    deleteTask = (taskId) => {
+        let idArray = this.state.tasks.map(task => {
+            return task.id;
         });
+
+        let newArray = this.state.tasks;
+        newArray.splice(idArray.findIndex((value) => {
+            return value === taskId;
+        }), 1);
+        
         this.setState({tasks: newArray});
+    }
+
+    
+    changeState = (taskId) => {
+        let idArray = this.state.tasks.map(task => {
+            return task.id;
+        });
+
+        let newArray = this.state.tasks;
+        newArray.splice(idArray.findIndex((value) => {
+            return value === taskId;
+        }), 1);
+        
+        // this.setState({tasks: newArray});
+
+        // this.setState({done: !this.state.done});
     }
 
     render() {
         return(
             <main className='main'>
                 <NavBar state={this.state} onUpdate={this.updateValue} updateTaskList={this.updateTaskList} />
-                <ToDoList state={this.state} deleteTask={this.deleteTask} />
+                <ToDoList state={this.state} deleteTask={this.deleteTask} changeState={this.changeState}/>
             </main>
         )
     }

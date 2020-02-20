@@ -5,7 +5,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer'
 
 class App extends Component {
-  tasksList = ['First task', 'Second task'];
+  tasksList = [{name: 'First task', id: 0, done: false}, {name: 'Second task', id: 1, done: false}];
 
   render() {
     return(
