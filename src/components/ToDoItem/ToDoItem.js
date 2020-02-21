@@ -4,7 +4,8 @@ import './ToDoItem.css';
 class ToDoItem extends Component {
     state = {
         temp: '',
-        weather: ''
+        weather: '',
+        hidden: true
     }
 
     getWeatherFromApi = async () => {
@@ -22,13 +23,15 @@ class ToDoItem extends Component {
         }
     }
 
-    async componentDidMount() {
-        await this.getWeatherFromApi();
+    componentDidMount() {
+        this.getWeatherFromApi().then(() => {
+            this.setState({hidden: false});
+        });
     }
 
     render() {
         return(
-            <section className='todoItem'>
+            <section className={this.state.hidden?'todoItem todoItem--hidden':'todoItem'}>
                 <span className={this.props.task.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={() => {this.props.changeState(this.props.task.id)}} >{this.props.task.name}</span>
                 <span className='todoItem__city'>{this.props.task.city}</span>
                 <span className='todoItem__temp'>{this.state.temp}</span>

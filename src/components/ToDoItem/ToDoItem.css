@@ -49,4 +49,8 @@
   position: absolute;
   right: 25px;
 }
+
+.todoItem--hidden {
+  display: none;
+}
 /*# sourceMappingURL=ToDoItem.css.map */
