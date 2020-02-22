@@ -18,34 +18,34 @@
   height: 30px;
   font-size: 1.2rem;
   border: none;
-  border-bottom: 1px solid rgba(180, 180, 180, 0.9);
+  border-bottom: 1px solid #86ABA8;
   background: transparent;
-  color: #fff8f0;
+  color: #F7F0E5;
   padding-left: 15px;
   margin-right: 20px;
 }
 
 .navigationBar__input--empty {
-  border-bottom-color: #92140c;
+  border-bottom-color: #DC3B41;
 }
 
 .navigationBar__input--empty::-webkit-input-placeholder {
-  color: #92140c;
+  color: #DC3B41;
   font-weight: bold;
 }
 
 .navigationBar__input--empty:-ms-input-placeholder {
-  color: #92140c;
+  color: #DC3B41;
   font-weight: bold;
 }
 
 .navigationBar__input--empty::-ms-input-placeholder {
-  color: #92140c;
+  color: #DC3B41;
   font-weight: bold;
 }
 
 .navigationBar__input--empty::placeholder {
-  color: #92140c;
+  color: #DC3B41;
   font-weight: bold;
 }
 
@@ -56,6 +56,6 @@
   font-weight: bold;
   border-radius: 50px;
   border: none;
-  background-color: rgba(180, 180, 180, 0.9);
+  background-color: #86ABA8;
 }
 /*# sourceMappingURL=NavBar.css.map */

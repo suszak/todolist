@@ -1,3 +1,10 @@
+$accent1: #DC3B41;
+$accent2: #86ABA8;
+$font1: #F7F0E5;
+$background1: #193153;
+$background2: #1A3F54;
+
+
 .navigationBar {
     width: 100vw;
     height: 50px;
@@ -10,16 +17,16 @@
         height: 30px;
         font-size: 1.2rem;
         border: none;
-        border-bottom: 1px solid rgba(180,180,180,0.9);
+        border-bottom: 1px solid $accent2;
         background: transparent;
-        color: rgba(255, 248, 240, 1);
+        color: $font1;
         padding-left: 15px;
         margin-right: 20px;
 
         &--empty {
-            border-bottom-color: rgba(146, 20, 12, 1);
+            border-bottom-color: $accent1;
             &::placeholder {
-                color: rgba(146, 20, 12, 1);
+                color: $accent1;
                 font-weight: bold;
             }
         }
@@ -32,6 +39,6 @@
         font-weight: bold;
         border-radius: 50px;
         border: none;
-        background-color: rgba(180,180,180,0.9);
+        background-color: $accent2;
     }
 }

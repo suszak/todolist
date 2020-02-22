@@ -1,42 +1,89 @@
+$accent1: #DC3B41;
+$accent2: #86ABA8;
+$font1: #F7F0E5;
+$background1: #193153;
+$background2: #1A3F54;
+
 .todoItem {
     width: 90vw;
-    height: 30px;
+    height: 50px;
     margin-top: 10px;
-    display: flex;
     position: relative;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto 20% 125px 50px;
+    grid-template-rows: 100%;
     border-radius: 50px;
-    background-color: rgba(22, 42, 85, 1);
+    background-color: $background1;
 
     &__name {
-        font-size: 2rem;
-        color: rgba(146, 20, 12, 1);
+        font-size: 2.5rem;
+        color: $accent1;
         font-weight: bold;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        text-align: center;
         
         &--done {
-            color: rgba(54, 209, 54, 1);
+            color: rgb(59, 220, 113);
             font-weight: normal;
             text-decoration: line-through;
         }
     }
 
+    &__city {
+        font-size: 2.5rem;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        text-align: right;
+        padding-right: 15px;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
     .svg-inline--fa.fa-w-16{
-        height: 20px;
-        width: 20px;
-        font-size: 1.5rem;
+        height: 30px;
+        width: 30px;
+        font-size: 1.8rem;
     }
 
     &__delete {
         display: flex;
+        align-items: center;
         justify-content: center;
-        color: rgba(146, 20, 12, 1);      
-        position: absolute;
-        right: 25px;  
+        color: $accent1;
+        grid-column-start: 4;
+        grid-column-end: 5;
     }
 
     &--hidden {
         display: none;
+    }
+}
+
+.weather {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 125px;
+    text-align: center;
+    font-size: 1.2rem;
+    
+    &__temp {
+        width: 100%;
+        height: 50%;
+        padding-top: 5px;
+    }
+
+    &__info {
+        width: 100%;
+        height: 50%;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
 }

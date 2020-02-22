@@ -1,5 +1,6 @@
 *, *::after, *::before {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -7,6 +8,7 @@
 html {
   font-size: 10px;
   font-family: 'Sriracha', cursive;
-  color: rgba(255, 248, 240, 1);
-  background-color: rgb(39, 65, 121);
+  color: #F7F0E5;
+  background-color: #1A3F54;
 }
+/*# sourceMappingURL=index.css.map */

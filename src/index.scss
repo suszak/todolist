@@ -1,0 +1,18 @@
+$accent1: #DC3B41;
+$accent2: #86ABA8;
+$font1: #F7F0E5;
+$background1: #193153;
+$background2: #1A3F54;
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Sriracha', cursive;
+  color: $font1;
+  background-color: $background2;
+}
