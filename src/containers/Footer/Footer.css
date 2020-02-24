@@ -1,23 +1,33 @@
 .footer {
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  font-size: 1.2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 1.5rem;
+  background-color: #193153;
+  border-top: solid 2px #86ABA8;
 }
 
-.footer__text {
+.text {
+  position: absolute;
+  right: 15px;
+}
+
+.text__info {
   margin-right: 5px;
 }
 
-.footer__author {
+.text__author {
+  display: inline-block;
   margin-right: 5px;
-  font-weight: bold;
+}
+
+.text__author::first-letter {
+  color: #DC3B41;
 }
 /*# sourceMappingURL=Footer.css.map */

@@ -32,7 +32,7 @@ class ToDoItem extends Component {
     render() {
         return(
             <section className={this.state.hidden?'todoItem todoItem--hidden':'todoItem'}>
-                <span className={this.props.task.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={() => {this.props.changeState(this.props.task.id)}} >{this.props.task.name}</span>
+                <span className={this.props.task.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={() => {this.props.changeState(this.props.task.id)}} ><span>{this.props.task.name}</span></span>
                 <span className='todoItem__city'>{this.props.task.city}</span>
                 <section className='weather'>
                     <span className='weather__temp'>{this.state.temp}</span>

@@ -14,6 +14,7 @@ $background2: #1A3F54;
     grid-template-rows: 100%;
     border-radius: 50px;
     background-color: $background1;
+    box-shadow: 0 0 5px 0 $accent2;
 
     &__name {
         font-size: 2.5rem;
@@ -27,6 +28,10 @@ $background2: #1A3F54;
             color: rgb(59, 220, 113);
             font-weight: normal;
             text-decoration: line-through;
+        }
+
+        & span {
+            cursor: pointer;
         }
     }
 
@@ -45,7 +50,15 @@ $background2: #1A3F54;
     .svg-inline--fa.fa-w-16{
         height: 30px;
         width: 30px;
-        font-size: 1.8rem;
+        border-radius: 50px;
+        transition: 0.3s;
+
+        &:hover {
+            color: $background1;
+            border: 1px solid $accent1;
+            background-color: $accent1;
+
+        }
     }
 
     &__delete {
@@ -55,6 +68,7 @@ $background2: #1A3F54;
         color: $accent1;
         grid-column-start: 4;
         grid-column-end: 5;
+        cursor: pointer;
     }
 
     &--hidden {

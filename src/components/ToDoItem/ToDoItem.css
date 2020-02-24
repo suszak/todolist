@@ -11,6 +11,8 @@
       grid-template-rows: 100%;
   border-radius: 50px;
   background-color: #193153;
+  -webkit-box-shadow: 0 0 5px 0 #86ABA8;
+          box-shadow: 0 0 5px 0 #86ABA8;
 }
 
 .todoItem__name {
@@ -29,6 +31,10 @@
   text-decoration: line-through;
 }
 
+.todoItem__name span {
+  cursor: pointer;
+}
+
 .todoItem__city {
   font-size: 2.5rem;
   -ms-grid-column: 2;
@@ -45,7 +51,15 @@
 .todoItem .svg-inline--fa.fa-w-16 {
   height: 30px;
   width: 30px;
-  font-size: 1.8rem;
+  border-radius: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.todoItem .svg-inline--fa.fa-w-16:hover {
+  color: #193153;
+  border: 1px solid #DC3B41;
+  background-color: #DC3B41;
 }
 
 .todoItem__delete {
@@ -62,6 +76,7 @@
   -ms-grid-column: 4;
       grid-column-start: 4;
   grid-column-end: 5;
+  cursor: pointer;
 }
 
 .todoItem--hidden {

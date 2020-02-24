@@ -9,8 +9,9 @@ $background2: #1A3F54;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $background1;
 
     &__title {
-        font-size: 10rem;
+        font-size: 9rem;
     }
 }

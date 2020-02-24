@@ -1,6 +1,6 @@
 .navigationBar {
   width: 100vw;
-  height: 50px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,51 +11,130 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #193153;
+  padding-top: 25px;
+  border-bottom: solid 2px #86ABA8;
 }
 
-.navigationBar__input {
-  width: 150px;
+.navigationBar__button {
+  width: 100px;
   height: 30px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  background-color: #86ABA8;
+  cursor: pointer;
+}
+
+.navigationBar__button:hover {
+  background-color: #193153;
+  color: #86ABA8;
+  border: 1px solid #86ABA8;
+}
+
+.task {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task__label {
+  position: absolute;
+  font-size: 1.7rem;
+  color: #86ABA8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.task__label--active {
   font-size: 1.2rem;
+  -webkit-transform: translateX(-60px) translateY(-25px);
+          transform: translateX(-60px) translateY(-25px);
+}
+
+.task__label--empty {
+  color: #DC3B41;
+}
+
+.task__input {
+  width: 250px;
+  height: 40px;
+  font-size: 1.7rem;
   border: none;
   border-bottom: 1px solid #86ABA8;
   background: transparent;
   color: #F7F0E5;
   padding-left: 15px;
-  margin-right: 20px;
+  z-index: 2;
 }
 
-.navigationBar__input--empty {
+.task__input--empty {
   border-bottom-color: #DC3B41;
 }
 
-.navigationBar__input--empty::-webkit-input-placeholder {
-  color: #DC3B41;
-  font-weight: bold;
+.city {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.navigationBar__input--empty:-ms-input-placeholder {
-  color: #DC3B41;
-  font-weight: bold;
+.city__label {
+  position: absolute;
+  font-size: 1.7rem;
+  color: #86ABA8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
 }
 
-.navigationBar__input--empty::-ms-input-placeholder {
-  color: #DC3B41;
-  font-weight: bold;
-}
-
-.navigationBar__input--empty::placeholder {
-  color: #DC3B41;
-  font-weight: bold;
-}
-
-.navigationBar__button {
-  width: 75px;
-  height: 30px;
+.city__label--active {
   font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 50px;
+  -webkit-transform: translateX(-60px) translateY(-25px);
+          transform: translateX(-60px) translateY(-25px);
+}
+
+.city__label--empty {
+  color: #DC3B41;
+}
+
+.city__input {
+  width: 250px;
+  height: 40px;
+  font-size: 1.7rem;
   border: none;
-  background-color: #86ABA8;
+  border-bottom: 1px solid #86ABA8;
+  background: transparent;
+  color: #F7F0E5;
+  padding-left: 15px;
+  z-index: 2;
+}
+
+.city__input--empty {
+  border-bottom-color: #DC3B41;
 }
 /*# sourceMappingURL=NavBar.css.map */

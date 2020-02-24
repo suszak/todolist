@@ -6,19 +6,29 @@ $background2: #1A3F54;
 
 .footer {
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    font-size: 1.2rem;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
+    background-color: $background1;
+    border-top: solid 2px $accent2;
+}
 
-    &__text {
+.text {
+    position: absolute;
+    right: 15px;
+
+    &__info {
         margin-right: 5px;
     }
 
     &__author {
+        display: inline-block;
         margin-right: 5px;
-        font-weight: bold;
+        
+        &::first-letter {
+            color: $accent1;
+        }
     }
 }

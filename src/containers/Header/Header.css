@@ -9,9 +9,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #193153;
 }
 
 .header__title {
-  font-size: 10rem;
+  font-size: 9rem;
 }
 /*# sourceMappingURL=Header.css.map */
