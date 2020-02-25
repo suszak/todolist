@@ -70,10 +70,6 @@ $background2: #1A3F54;
         grid-column-end: 5;
         cursor: pointer;
     }
-
-    &--hidden {
-        display: none;
-    }
 }
 
 .weather {
@@ -99,5 +95,9 @@ $background2: #1A3F54;
         &::first-letter {
             text-transform: uppercase;
         }
+    }
+
+    &--hidden {
+        display: none;
     }
 }

@@ -31,10 +31,10 @@ class ToDoItem extends Component {
 
     render() {
         return(
-            <section className={this.state.hidden?'todoItem todoItem--hidden':'todoItem'}>
+            <section className='todoItem'>
                 <span className={this.props.task.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={() => {this.props.changeState(this.props.task.id)}} ><span>{this.props.task.name}</span></span>
                 <span className='todoItem__city'>{this.props.task.city}</span>
-                <section className='weather'>
+                <section className={this.state.hidden?'weather weather--hidden':'weather'}>
                     <span className='weather__temp'>{this.state.temp}</span>
                     <span className='weather__info'>{this.state.weather}</span>
                 </section>

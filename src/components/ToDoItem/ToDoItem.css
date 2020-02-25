@@ -79,10 +79,6 @@
   cursor: pointer;
 }
 
-.todoItem--hidden {
-  display: none;
-}
-
 .weather {
   -ms-grid-column: 3;
       grid-column-start: 3;
@@ -113,5 +109,9 @@
 
 .weather__info::first-letter {
   text-transform: uppercase;
+}
+
+.weather--hidden {
+  display: none;
 }
 /*# sourceMappingURL=ToDoItem.css.map */
