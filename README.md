@@ -6,9 +6,9 @@
 * [How to run locally](#how-to-run)
 
 ## General info
-It is my first react application. 
+It is my first react application.
 I have created it with create-react-app.
-You can use this app to add new tasks, delete the old ones, check if it is done/undone.
+You can use this app to add new tasks, delete the old one, check if it is done/undone.
 If you type real localization you can see actual temperature and weather, which is fetched from OpenWeatherMap API.
 
 ## Technologies
