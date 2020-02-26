@@ -24,7 +24,7 @@ Project is created with:
 ## How to run
 To run this project, use npm:
 
-* Download this app from master branch
+* Download this app from build branch
 * Install node.js
 * Open terminal in downloaded directory
 * Type in terminal:
