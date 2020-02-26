@@ -24,6 +24,7 @@ $background2: #1A3F54;
         border-radius: 50px;
         border: none;
         background-color: $accent2;
+        transition: 0.3s;
         cursor: pointer;
 
         &:hover {
@@ -119,5 +120,35 @@ $background2: #1A3F54;
         &--empty {
             border-bottom-color: $accent1;
         }
+    }
+}
+
+
+.tooltip {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    margin-top: -50px;
+    background-color: $background2;
+    border: 1px solid $accent1;
+    border-radius: 10px;
+    z-index: 2;
+    color: $accent1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    visibility: hidden;
+    transition: 0.3s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: $accent1 transparent transparent transparent;
     }
 }

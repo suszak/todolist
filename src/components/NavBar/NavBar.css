@@ -27,6 +27,8 @@
   border-radius: 50px;
   border: none;
   background-color: #86ABA8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -136,5 +138,41 @@
 
 .city__input--empty {
   border-bottom-color: #DC3B41;
+}
+
+.tooltip {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  margin-top: -50px;
+  background-color: #1A3F54;
+  border: 1px solid #DC3B41;
+  border-radius: 10px;
+  z-index: 2;
+  color: #DC3B41;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #DC3B41 transparent transparent transparent;
 }
 /*# sourceMappingURL=NavBar.css.map */

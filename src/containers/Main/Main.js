@@ -25,8 +25,10 @@ class Main extends Component {
         if(!this.state.draft || !this.state.city) {
             if(!this.state.draft) {
                 document.querySelector('#draftInput').classList.add('task__input--empty');
+                document.querySelector('#taskTooltip').style.visibility = 'visible';
             } if(!this.state.city) {
                 document.querySelector('#cityInput').classList.add('city__input--empty');
+                document.querySelector('#cityTooltip').style.visibility = 'visible';
             } 
         } else {
         let tasksArray = this.state.tasks;
