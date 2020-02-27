@@ -4,7 +4,6 @@ live version: [suszak.github.io/todolist](http://suszak.github.io/todolist/)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Used API](#used-api)
-* [How to run locally](#how-to-run)
 
 ## General info
 It is my first react application.
@@ -21,18 +20,3 @@ Project is created with:
 
 ## Used API
 * [OpenWeatherMap](https://openweathermap.org/api)
-
-## How to run
-To run this project, use npm:
-
-* Download this app from build branch
-* Install node.js
-* Open terminal in downloaded directory
-* Type in terminal:
-
-```
-$ npm start
-```
-
-* Open site in your browser with:
-[http://localhost:3000](http://localhost:3000)
