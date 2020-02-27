@@ -10,7 +10,7 @@ class ToDoItem extends Component {
 
     getWeatherFromApi = async () => {
         try {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?appid=0c79a3e8f66a976ec6832ddc76907c72&q=${this.props.task.city}&units=metric&lang=en`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=0c79a3e8f66a976ec6832ddc76907c72&q=${this.props.task.city}&units=metric&lang=en`);
             if(response.status === 200) {
                 const weather = await response.json();
                 this.setState({ temp: 'Temperature: '+Math.round(weather.main.temp)+'°C', weather: weather.weather[0].description });
