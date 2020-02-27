@@ -1,5 +1,5 @@
 # Todolist react app
-live version: [suszak.github.io/todolist](http://suszak.github.io/todolist)
+live version: [suszak.github.io/todolist](http://suszak.github.io/todolist/)
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
