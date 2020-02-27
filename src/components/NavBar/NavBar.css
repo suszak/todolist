@@ -175,4 +175,30 @@
   border-style: solid;
   border-color: #DC3B41 transparent transparent transparent;
 }
+
+.tooltip--visible {
+  visibility: visible;
+  -webkit-animation: show ease-in-out;
+          animation: show ease-in-out;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=NavBar.css.map */

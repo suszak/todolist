@@ -42,10 +42,7 @@
   grid-column-end: 3;
   text-align: right;
   padding-right: 15px;
-}
-
-.todoItem__city::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .todoItem .svg-inline--fa.fa-w-16 {

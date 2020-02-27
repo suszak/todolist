@@ -5,7 +5,7 @@ class NavBar extends Component {
 
     inputFocused = (sectionName) => {
         document.querySelector(`.${sectionName}__label`).classList.add(`${sectionName}__label--active`);
-        document.querySelector(`#${sectionName}Tooltip`).style.visibility = 'hidden';
+        document.querySelector(`#${sectionName}Tooltip`).classList.remove('tooltip--visible');
     }
 
     inputUnfocused = (sectionName) => {

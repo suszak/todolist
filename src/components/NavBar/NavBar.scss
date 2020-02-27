@@ -151,4 +151,20 @@ $background2: #1A3F54;
         border-style: solid;
         border-color: $accent1 transparent transparent transparent;
     }
+
+    &--visible {
+        visibility: visible;
+        animation: show ease-in-out;
+        animation-duration: 0.2s;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0.1;
+    } 
+
+    to {
+        opacity: 1;
+    }
 }

@@ -25,15 +25,15 @@ class Main extends Component {
         if(!this.state.draft || !this.state.city) {
             if(!this.state.draft) {
                 document.querySelector('#draftInput').classList.add('task__input--empty');
-                document.querySelector('#taskTooltip').style.visibility = 'visible';
+                document.querySelector('#taskTooltip').classList.add('tooltip--visible');
             } if(!this.state.city) {
                 document.querySelector('#cityInput').classList.add('city__input--empty');
-                document.querySelector('#cityTooltip').style.visibility = 'visible';
+                document.querySelector('#cityTooltip').classList.add('tooltip--visible');
             } 
         } else {
         let tasksArray = this.state.tasks;
         const idArray = tasksArray.map(task => {
-                return task.id;    
+                return task.id;
             }
         );
         
