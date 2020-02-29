@@ -4,6 +4,7 @@ live version: [suszak.github.io/todolist](http://suszak.github.io/todolist/)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Used API](#used-api)
+* [To do](#to-do)
 
 ## General info
 It is my first react application.
