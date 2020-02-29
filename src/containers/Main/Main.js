@@ -7,7 +7,8 @@ class Main extends Component {
     state = {
         tasks: this.props.tasks,
         draft: '',
-        city: ''
+        city: '',
+        date: ''
     }
 
     // Update draft input value:
@@ -20,16 +21,24 @@ class Main extends Component {
         this.setState({city: event.target.value});
     }
 
+    // Update date input value:
+    updateDate = (value) => {
+        this.setState({date: value});
+    }
+
     // Add new task:
     updateTaskList = () => {
-        if(!this.state.draft || !this.state.city) {
+        if(!this.state.draft || !this.state.city || !this.state.date) {
             if(!this.state.draft) {
                 document.querySelector('#draftInput').classList.add('task__input--empty');
                 document.querySelector('#taskTooltip').classList.add('tooltip--visible');
             } if(!this.state.city) {
                 document.querySelector('#cityInput').classList.add('city__input--empty');
                 document.querySelector('#cityTooltip').classList.add('tooltip--visible');
-            } 
+            } if(!this.state.date) {
+                document.querySelector('#dateInput').classList.add('date__input--empty');
+                document.querySelector('#dateTooltip').classList.add('tooltip--visible');
+            }
         } else {
         let tasksArray = this.state.tasks;
         const idArray = tasksArray.map(task => {
@@ -78,7 +87,7 @@ class Main extends Component {
     render() {
         return(
             <main className='main'>
-                <NavBar state={this.state} updateDraft={this.updateDraft} updateCity={this.updateCity} updateTaskList={this.updateTaskList} />
+                <NavBar state={this.state} updateDraft={this.updateDraft} updateCity={this.updateCity} updateDate={this.updateDate} updateTaskList={this.updateTaskList} />
                 <ToDoList state={this.state} deleteTask={this.deleteTask} changeState={this.changeState}/>
             </main>
         )
