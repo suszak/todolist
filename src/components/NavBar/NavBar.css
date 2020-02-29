@@ -140,7 +140,7 @@
   border-bottom-color: #DC3B41;
 }
 
-.date {
+.deadline {
   position: relative;
   width: 250px;
   height: 50px;
@@ -156,7 +156,7 @@
           align-items: center;
 }
 
-.date__label {
+.deadline__label {
   position: absolute;
   font-size: 1.7rem;
   color: #86ABA8;
@@ -165,17 +165,17 @@
   z-index: 0;
 }
 
-.date__label--active {
+.deadline__label--active {
   font-size: 1.2rem;
   -webkit-transform: translateX(-60px) translateY(-25px);
           transform: translateX(-60px) translateY(-25px);
 }
 
-.date__label--empty {
+.deadline__label--empty {
   color: #DC3B41;
 }
 
-.date__input {
+.deadline__input {
   width: 250px;
   height: 40px;
   font-size: 1.7rem;
@@ -187,7 +187,7 @@
   z-index: 2;
 }
 
-.date__input--empty {
+.deadline__input--empty {
   border-bottom-color: #DC3B41;
 }
 

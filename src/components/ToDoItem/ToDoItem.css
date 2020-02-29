@@ -5,14 +5,15 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 20% 125px 50px;
-      grid-template-columns: auto 20% 125px 50px;
+  -ms-grid-columns: auto 150px 250px 125px 50px;
+      grid-template-columns: auto 150px 250px 125px 50px;
   -ms-grid-rows: 100%;
       grid-template-rows: 100%;
   border-radius: 50px;
   background-color: #193153;
   -webkit-box-shadow: 0 0 5px 0 #86ABA8;
           box-shadow: 0 0 5px 0 #86ABA8;
+  overflow: hidden;
 }
 
 .todoItem__name {
@@ -35,11 +36,20 @@
   cursor: pointer;
 }
 
-.todoItem__city {
+.todoItem__deadline {
   font-size: 2.5rem;
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 3;
+  text-align: center;
+  padding-right: 15px;
+}
+
+.todoItem__city {
+  font-size: 2.5rem;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
   text-align: right;
   padding-right: 15px;
   text-transform: capitalize;
@@ -70,16 +80,16 @@
       -ms-flex-pack: center;
           justify-content: center;
   color: #DC3B41;
-  -ms-grid-column: 4;
-      grid-column-start: 4;
-  grid-column-end: 5;
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 6;
   cursor: pointer;
 }
 
 .weather {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-  grid-column-end: 4;
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

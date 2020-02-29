@@ -33,6 +33,7 @@ class ToDoItem extends Component {
         return(
             <section className='todoItem'>
                 <span className={this.props.task.done?'todoItem__name todoItem__name--done':'todoItem__name'} onClick={() => {this.props.changeState(this.props.task.id)}} ><span>{this.props.task.name}</span></span>
+                <span className='todoItem__deadline'>{this.props.task.deadline.toLocaleDateString('pl-PL')}</span>
                 <span className='todoItem__city'>{this.props.task.city}</span>
                 <section className={this.state.hidden?'weather weather--hidden':'weather'}>
                     <span className='weather__temp'>{this.state.temp}</span>

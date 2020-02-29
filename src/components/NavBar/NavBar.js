@@ -12,9 +12,9 @@ class NavBar extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
         
-    handleChange = async (date) => {
+    handleChange = async (deadline) => {
         await this.setState({
-                startDate: date
+                startDate: deadline
         });
         
         this.props.updateDate(this.state.startDate);
@@ -41,8 +41,8 @@ class NavBar extends Component {
             document.querySelector('.city__label').classList.remove('city__label--active');
         }
 
-        if(!document.querySelector('.date__input').value) {
-            document.querySelector('.date__label').classList.remove('date__label--active');
+        if(!document.querySelector('.deadline__input').value) {
+            document.querySelector('.deadline__label').classList.remove('deadline__label--active');
         }
     }
 
@@ -59,10 +59,10 @@ class NavBar extends Component {
                     <label for='cityInput' className='city__label'>Type location here...</label>
                     <input type='text' name='cityInput' className='city__input' id='cityInput' onChange={this.props.updateCity} onFocus={() => {this.inputFocused('city')}} onBlur={() => {this.inputUnfocused('city')}} value={this.props.state.city}></input>
                 </section>
-                <section className='date'>
-                    <div className='tooltip' id='dateTooltip'>It cannot be empty!</div>
-                    <label for='dateInput' className='date__label'>Choose date...</label>
-                    <DatePicker selected={this.state.startDate} onChange={this.handleChange} id='dateInput' name='dateInput' className='date__input' onFocus={() => {this.inputFocused('date')}} onBlur={() => {this.inputUnfocused('date')}} value={this.state.startDate} dateFormat='dd/MM/yyyy'/>
+                <section className='deadline'>
+                    <div className='tooltip' id='deadlineTooltip'>It cannot be empty!</div>
+                    <label for='deadlineInput' className='deadline__label'>Set deadline...</label>
+                    <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline')}} onBlur={() => {this.inputUnfocused('deadline')}} value={this.state.startDate} dateFormat='dd/MM/yyyy'/>
                 </section>
                 <button className='navigationBar__button' onClick={async () => { await this.props.updateTaskList(); this.moveLabel()}} >Add task</button>
             </nav>

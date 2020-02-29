@@ -8,7 +8,7 @@ class Main extends Component {
         tasks: this.props.tasks,
         draft: '',
         city: '',
-        date: ''
+        deadline: ''
     }
 
     // Update draft input value:
@@ -21,23 +21,23 @@ class Main extends Component {
         this.setState({city: event.target.value});
     }
 
-    // Update date input value:
+    // Update deadline input value:
     updateDate = (value) => {
-        this.setState({date: value});
+        this.setState({deadline: value});
     }
 
     // Add new task:
     updateTaskList = () => {
-        if(!this.state.draft || !this.state.city || !this.state.date) {
+        if(!this.state.draft || !this.state.city || !this.state.deadline) {
             if(!this.state.draft) {
                 document.querySelector('#draftInput').classList.add('task__input--empty');
                 document.querySelector('#taskTooltip').classList.add('tooltip--visible');
             } if(!this.state.city) {
                 document.querySelector('#cityInput').classList.add('city__input--empty');
                 document.querySelector('#cityTooltip').classList.add('tooltip--visible');
-            } if(!this.state.date) {
-                document.querySelector('#dateInput').classList.add('date__input--empty');
-                document.querySelector('#dateTooltip').classList.add('tooltip--visible');
+            } if(!this.state.deadline) {
+                document.querySelector('#deadlineInput').classList.add('deadline__input--empty');
+                document.querySelector('#deadlineTooltip').classList.add('tooltip--visible');
             }
         } else {
         let tasksArray = this.state.tasks;
@@ -49,8 +49,8 @@ class Main extends Component {
         document.querySelector('#draftInput').classList.remove('task__input--empty');
         document.querySelector('#cityInput').classList.remove('city__input--empty');
 
-        tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, done: false});
-        this.setState({tasks: tasksArray, draft: '', city: ''});
+        tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, deadline: this.state.deadline, done: false});
+        this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''});
         }
     }
 
