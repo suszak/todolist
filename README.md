@@ -28,3 +28,4 @@ Project is created with:
 * add sorting tasks by deadline date
 * add local storage for tasks list
 * add communication with server to store tasks list
+* mobile design
