@@ -79,7 +79,7 @@ class Main extends Component {
 
         let newArray = this.state.tasks;
         
-        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, done: !newArray[index].done};
+        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: !newArray[index].done};
         
         this.setState({tasks: newArray});
     }
