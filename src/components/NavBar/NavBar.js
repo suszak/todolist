@@ -51,17 +51,17 @@ class NavBar extends Component {
             <nav className="navigationBar">
                 <section className='task'>
                     <div className='tooltip' id='taskTooltip'>It cannot be empty!</div>
-                    <label for='taskInput' className='task__label'>Type your task here...</label>
+                    <label htmlFor='taskInput' className='task__label'>Type your task here...</label>
                     <input type='text' name='taskInput' className='task__input' id='draftInput' onChange={this.props.updateDraft} onFocus={() => {this.inputFocused('task')}} onBlur={() => {this.inputUnfocused('task')}} value={this.props.state.draft}></input>
                 </section>
                 <section className='city'>
                     <div className='tooltip' id='cityTooltip'>It cannot be empty!</div>
-                    <label for='cityInput' className='city__label'>Type location here...</label>
+                    <label htmlFor='cityInput' className='city__label'>Type location here...</label>
                     <input type='text' name='cityInput' className='city__input' id='cityInput' onChange={this.props.updateCity} onFocus={() => {this.inputFocused('city')}} onBlur={() => {this.inputUnfocused('city')}} value={this.props.state.city}></input>
                 </section>
                 <section className='deadline'>
                     <div className='tooltip' id='deadlineTooltip'>It cannot be empty!</div>
-                    <label for='deadlineInput' className='deadline__label'>Set deadline...</label>
+                    <label htmlFor='deadlineInput' className='deadline__label'>Set deadline...</label>
                     <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline')}} onBlur={() => {this.inputUnfocused('deadline')}} value={this.state.startDate} dateFormat='dd/MM/yyyy'/>
                 </section>
                 <button className='navigationBar__button' onClick={async () => { await this.props.updateTaskList(); this.moveLabel()}} >Add task</button>

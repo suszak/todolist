@@ -8,7 +8,8 @@ class Main extends Component {
         tasks: this.props.tasks,
         draft: '',
         city: '',
-        deadline: ''
+        deadline: '',
+        important: ''
     }
 
     // Update draft input value:
@@ -49,7 +50,7 @@ class Main extends Component {
         document.querySelector('#draftInput').classList.remove('task__input--empty');
         document.querySelector('#cityInput').classList.remove('city__input--empty');
 
-        tasksArray.push({name: this.state.draft, city: this.state.city, id: Math.max(...idArray)+1, deadline: this.state.deadline, done: false});
+        tasksArray.push({name: this.state.draft, city: this.state.city, id: (Math.max(...idArray)<0)?0:Math.max(...idArray)+1, deadline: this.state.deadline, done: false, important: false});
         this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''});
         }
     }
@@ -79,7 +80,23 @@ class Main extends Component {
 
         let newArray = this.state.tasks;
         
-        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: !newArray[index].done};
+        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: !newArray[index].done, important: newArray[index].important};
+        
+        this.setState({tasks: newArray});
+    }
+
+    // Change important state
+    changeImportantState = (taskId) => {
+        const idArray = this.state.tasks.map(task => {
+            return task.id;
+        });
+        const index = idArray.findIndex((value) => {
+            return value === taskId;
+        });
+
+        let newArray = this.state.tasks;
+        
+        newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: newArray[index].done, important: !newArray[index].important};
         
         this.setState({tasks: newArray});
     }
@@ -88,7 +105,7 @@ class Main extends Component {
         return(
             <main className='main'>
                 <NavBar state={this.state} updateDraft={this.updateDraft} updateCity={this.updateCity} updateDate={this.updateDate} updateTaskList={this.updateTaskList} />
-                <ToDoList state={this.state} deleteTask={this.deleteTask} changeState={this.changeState}/>
+                <ToDoList state={this.state} deleteTask={this.deleteTask} changeState={this.changeState} changeImportantState={this.changeImportantState} />
             </main>
         )
     }
