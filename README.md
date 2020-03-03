@@ -23,7 +23,6 @@ Project is created with:
 * [OpenWeatherMap](https://openweathermap.org/api)
 
 ## To do
-* change favicon
 * add 'important' sign for each from tasks
 * add sorting tasks by deadline date
 * add local storage for tasks list
