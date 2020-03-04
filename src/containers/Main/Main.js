@@ -51,7 +51,7 @@ class Main extends Component {
         document.querySelector('#cityInput').classList.remove('city__input--empty');
 
         tasksArray.push({name: this.state.draft, city: this.state.city, id: (Math.max(...idArray)<0)?0:Math.max(...idArray)+1, deadline: this.state.deadline, done: false, important: false});
-        this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''});
+        this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''}, this.sortingTasks);
         }
     }
 
@@ -66,7 +66,7 @@ class Main extends Component {
             return value === taskId;
         }), 1);
         
-        this.setState({tasks: newArray});
+        this.setState({tasks: newArray}, this.sortingTasks);
     }
 
     // Change state done/todo
@@ -82,7 +82,7 @@ class Main extends Component {
         
         newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: !newArray[index].done, important: newArray[index].important};
         
-        this.setState({tasks: newArray});
+        this.setState({tasks: newArray}, this.sortingTasks);
     }
 
     // Change important state
@@ -98,7 +98,38 @@ class Main extends Component {
         
         newArray[index] = {name: newArray[index].name, id: newArray[index].id, city: newArray[index].city, deadline: newArray[index].deadline, done: newArray[index].done, important: !newArray[index].important};
         
-        this.setState({tasks: newArray});
+        this.setState({tasks: newArray}, this.sortingTasks);
+    }
+
+    // Sorting tasks
+    sortingTasks = () => {
+        const importantArray = [];
+        const unimportantArray = [];
+
+        this.state.tasks.map((task) => {
+            if(task.important) {
+                importantArray.push(task);
+                return task;
+            } else {
+                unimportantArray.push(task);
+                return task;
+            }
+        })
+
+        importantArray.sort(function(a, b) {
+            return a.deadline - b.deadline;
+        })
+
+        unimportantArray.sort(function(a, b) {
+            return a.deadline - b.deadline;
+        })
+
+        const sortedArray = [...importantArray, ...unimportantArray];
+        this.setState({tasks: sortedArray});
+    }
+
+    componentWillMount() {
+        this.sortingTasks();
     }
 
     render() {

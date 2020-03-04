@@ -5,7 +5,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer'
 
 class App extends Component {
-  tasksList = [{id: 0, name: 'First task', city: 'Cieszyn', deadline: new Date(), done: false, important: false}, {id: 1, name: 'Second task', city: 'Warszawa', deadline: new Date(), done: false, important: true}];
+  tasksList = [{id: 0, name: 'First task', city: 'Cieszyn', deadline: new Date(2019,2,2), done: false, important: false}, {id: 1, name: 'Second task', city: 'Warszawa', deadline: new Date(2019,2,2), done: false, important: true}, {id: 2, name: 'Third task', city: 'Gliwice', deadline: new Date(2019,3,2), done: false, important: true}];
 
   render() {
     return(
