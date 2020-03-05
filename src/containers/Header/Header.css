@@ -1,4 +1,6 @@
 .header {
+  width: 100vw;
+  min-width: 1100px;
   height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;

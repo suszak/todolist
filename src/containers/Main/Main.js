@@ -29,7 +29,7 @@ class Main extends Component {
 
     // Add new task:
     updateTaskList = () => {
-        if(!this.state.draft || !this.state.city || !this.state.deadline) {
+        if(!this.state.draft || !this.state.city || !this.state.deadline || this.state.draft.indexOf('|') !== -1 || this.state.city.indexOf('|') !== -1) {
             if(!this.state.draft) {
                 document.querySelector('#draftInput').classList.add('task__input--empty');
                 document.querySelector('#taskTooltip').classList.add('tooltip--visible');
@@ -40,18 +40,25 @@ class Main extends Component {
                 document.querySelector('#deadlineInput').classList.add('deadline__input--empty');
                 document.querySelector('#deadlineTooltip').classList.add('tooltip--visible');
             }
-        } else {
-        let tasksArray = this.state.tasks;
-        const idArray = tasksArray.map(task => {
-                return task.id;
+            if(this.state.draft.indexOf('|') !== -1) {
+                document.querySelector('#draftInput').classList.add('task__input--empty');
+                document.querySelector('#taskTooltipSign').classList.add('tooltip--visible');
+            } if(this.state.city.indexOf('|') !== -1) {
+                document.querySelector('#cityInput').classList.add('city__input--empty');
+                document.querySelector('#cityTooltipSign').classList.add('tooltip--visible');
             }
-        );
-        
-        document.querySelector('#draftInput').classList.remove('task__input--empty');
-        document.querySelector('#cityInput').classList.remove('city__input--empty');
+        } else {
+            let tasksArray = this.state.tasks;
+            const idArray = tasksArray.map(task => {
+                    return task.id;
+                }
+            );
+            
+            document.querySelector('#draftInput').classList.remove('task__input--empty');
+            document.querySelector('#cityInput').classList.remove('city__input--empty');
 
-        tasksArray.push({name: this.state.draft, city: this.state.city, id: (Math.max(...idArray)<0)?0:Math.max(...idArray)+1, deadline: this.state.deadline, done: false, important: false});
-        this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''}, this.sortingTasks);
+            tasksArray.push({name: this.state.draft, city: this.state.city, id: (Math.max(...idArray)<0)?0:Math.max(...idArray)+1, deadline: this.state.deadline, done: false, important: false});
+            this.setState({tasks: tasksArray, draft: '', city: '', deadline: ''}, this.sortingTasks);
         }
     }
 
@@ -106,29 +113,42 @@ class Main extends Component {
         const importantArray = [];
         const unimportantArray = [];
 
-        this.state.tasks.map((task) => {
-            if(task.important) {
-                importantArray.push(task);
-                return task;
-            } else {
-                unimportantArray.push(task);
-                return task;
-            }
-        })
+        if(this.state.tasks !== '') {
+            this.state.tasks.map((task) => {
+                if(task.important) {
+                    importantArray.push(task);
+                    return task;
+                } else {
+                    unimportantArray.push(task);
+                    return task;
+                }
+            })
 
-        importantArray.sort(function(a, b) {
-            return a.deadline - b.deadline;
-        })
+            importantArray.sort(function(a, b) {
+                return a.deadline - b.deadline;
+            })
 
-        unimportantArray.sort(function(a, b) {
-            return a.deadline - b.deadline;
-        })
+            unimportantArray.sort(function(a, b) {
+                return a.deadline - b.deadline;
+            })
 
-        const sortedArray = [...importantArray, ...unimportantArray];
-        this.setState({tasks: sortedArray});
+            const sortedArray = [...importantArray, ...unimportantArray];
+            this.setState({tasks: sortedArray});
+
+            // format array of objects to string
+            let localTasksArray = sortedArray.map((task) => {
+                return JSON.stringify(task);
+            });
+  
+            localTasksArray = localTasksArray.join('|');
+
+            // save to local storage
+            localStorage.setItem('tasksArray', localTasksArray);
+        }
     }
 
     componentWillMount() {
+        // sorting array
         this.sortingTasks();
     }
 

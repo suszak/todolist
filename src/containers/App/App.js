@@ -5,7 +5,27 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer'
 
 class App extends Component {
-  tasksList = [{id: 0, name: 'First task', city: 'Cieszyn', deadline: new Date(2019,2,2), done: false, important: false}, {id: 1, name: 'Second task', city: 'Warszawa', deadline: new Date(2019,2,2), done: false, important: true}, {id: 2, name: 'Third task', city: 'Gliwice', deadline: new Date(2019,3,2), done: false, important: true}];
+  tasksList = [];
+
+  componentWillMount() {
+    // read local storage
+    if(!localStorage.getItem('tasksArray')) {
+      this.tasksList = [];      
+    } else {
+      let tasksArrayString = localStorage.getItem('tasksArray');
+      tasksArrayString = tasksArrayString.split('|');
+
+      let tasksArray = tasksArrayString.map((task) => {
+          return JSON.parse(task);
+      })
+
+      tasksArray.forEach(element => {
+        element.deadline = new Date(element.deadline);
+      });
+
+      this.tasksList = tasksArray;
+    }
+  }
 
   render() {
     return(

@@ -1,5 +1,6 @@
 .todoItem {
   width: 90vw;
+  min-width: 990px;
   height: 50px;
   margin-top: 10px;
   position: relative;

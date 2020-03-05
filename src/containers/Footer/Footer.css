@@ -1,5 +1,6 @@
 .footer {
   width: 100vw;
+  min-width: 1100px;
   height: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
