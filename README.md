@@ -23,6 +23,5 @@ Project is created with:
 * [OpenWeatherMap](https://openweathermap.org/api)
 
 ## To do
-* add local storage for tasks list
 * add communication with server to store tasks list
 * mobile design
