@@ -23,5 +23,7 @@ Project is created with:
 * [OpenWeatherMap](https://openweathermap.org/api)
 
 ## To do
-* add communication with server to store tasks list
+* responsive design
 * mobile design
+* automatically set warning if task is undone after deadline
+* learn routing on editing tasks
