@@ -147,7 +147,7 @@ class Main extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         // sorting array
         this.sortingTasks();
     }

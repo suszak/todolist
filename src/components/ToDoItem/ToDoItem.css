@@ -17,6 +17,11 @@
   overflow: hidden;
 }
 
+.todoItem--warning {
+  -webkit-box-shadow: 0 0 5px 2px #DC3B41;
+          box-shadow: 0 0 5px 2px #DC3B41;
+}
+
 .todoItem .svg-inline--fa.fa-w-18 {
   height: 30px;
   width: 30px;
@@ -73,6 +78,10 @@
   grid-column-end: 4;
   text-align: center;
   padding-right: 15px;
+}
+
+.todoItem__deadline--afterDate {
+  color: #DC3B41;
 }
 
 .todoItem__city {

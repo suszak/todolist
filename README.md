@@ -25,5 +25,4 @@ Project is created with:
 ## To do
 * responsive design
 * mobile design
-* automatically set warning if task is undone after deadline
 * learn routing on editing tasks

@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer'
 class App extends Component {
   tasksList = [];
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // read local storage
     if(!localStorage.getItem('tasksArray')) {
       this.tasksList = [];      

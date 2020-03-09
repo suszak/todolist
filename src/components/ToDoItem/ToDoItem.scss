@@ -19,6 +19,10 @@ $yellow: #d48d24;
     box-shadow: 0 0 5px 0 $accent2;
     overflow: hidden;
 
+    &--warning {
+        box-shadow: 0 0 5px 2px $accent1;
+    }
+
 
     .svg-inline--fa.fa-w-18 {
         height: 30px;
@@ -66,6 +70,10 @@ $yellow: #d48d24;
         grid-column-end: 4;
         text-align: center;
         padding-right: 15px;
+
+        &--afterDate {
+            color: $accent1;
+        }
     }
 
     &__city {
