@@ -66,7 +66,7 @@ class NavBar extends Component {
                     <div className='tooltip' id='deadlineTooltipSign'>Don't use '|' inside!</div>
                     <div className='tooltip' id='deadlineTooltip'>It cannot be empty!</div>
                     <label htmlFor='deadlineInput' className='deadline__label'>Set deadline...</label>
-                    <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline')}} onBlur={() => {this.inputUnfocused('deadline')}} value={this.state.startDate} dateFormat='dd/MM/yyyy'/>
+                    <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline')}} onBlur={() => {this.inputUnfocused('deadline')}} value={this.state.startDate} dateFormat='dd/MM/yyyy' withPortal/>
                 </section>
                 <button className='navigationBar__button' onClick={async () => { await this.props.updateTaskList(); this.moveLabel()}} >Add task</button>
             </nav>
