@@ -71,12 +71,21 @@
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 3;
+    height: 30px;
+    width: 30px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
 @media screen and (max-width: 556px) {
   .todoItem__importantSign {
-    grid-row-end: 5;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    grid-row-end: 4;
   }
 }
 
@@ -217,12 +226,21 @@
     -ms-grid-row: 1;
         grid-row-start: 1;
     grid-row-end: 3;
+    height: 30px;
+    width: 30px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
 @media screen and (max-width: 556px) {
   .todoItem__delete {
-    grid-row-end: 5;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    grid-row-end: 4;
   }
 }
 

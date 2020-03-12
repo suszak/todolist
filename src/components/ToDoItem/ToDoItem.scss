@@ -53,10 +53,15 @@ $yellow: #d48d24;
         @media screen and (max-width: 1100px){
             grid-row-start: 1;
             grid-row-end: 3;
+            height: 30px;
+            width: 30px;
+            justify-self: center;
+            align-self: center;
         }
 
         @media screen and (max-width: 556px) {
-            grid-row-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 4;
         }
 
             .hidden {
@@ -167,10 +172,15 @@ $yellow: #d48d24;
             grid-column-end: 4;    
             grid-row-start: 1;
             grid-row-end: 3;
+            height: 30px;
+            width: 30px;
+            justify-self: center;
+            align-self: center;
         }
 
         @media screen and (max-width: 556px) {
-            grid-row-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 4;
         }
     }
 }
