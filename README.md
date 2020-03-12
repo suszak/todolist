@@ -23,6 +23,4 @@ Project is created with:
 * [OpenWeatherMap](https://openweathermap.org/api)
 
 ## To do
-* responsive design
-* mobile design
 * learn routing on editing tasks
