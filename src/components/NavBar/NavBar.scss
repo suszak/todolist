@@ -101,6 +101,10 @@ $background2: #1A3F54;
         &--active {
             font-size: 1.2rem;
             transform: translateX(-60px) translateY(-25px);
+
+            @media screen and (max-width: 1100px){
+                transform: translateX(-120px) translateY(-25px);
+            }
         }
 
         &--empty {
@@ -122,6 +126,7 @@ $background2: #1A3F54;
 
         @media screen and (max-width: 1100px) {
             width: 350px;
+            text-align: center;
         }
 
         &--empty {
@@ -159,6 +164,10 @@ $background2: #1A3F54;
         &--active {
             font-size: 1.2rem;
             transform: translateX(-60px) translateY(-25px);
+
+            @media screen and (max-width: 1100px){
+                transform: translateX(-120px) translateY(-25px);
+            }
         }
 
         &--empty {
@@ -180,6 +189,7 @@ $background2: #1A3F54;
 
         @media screen and (max-width: 1100px) {
             width: 350px;
+            text-align: center;
         }
 
         &--empty {
@@ -218,6 +228,10 @@ $background2: #1A3F54;
         &--active {
             font-size: 1.2rem;
             transform: translateX(-60px) translateY(-25px);
+
+            @media screen and (max-width: 1100px){
+                transform: translateX(-120px) translateY(-25px);
+            }
         }
 
         &--empty {
@@ -239,6 +253,7 @@ $background2: #1A3F54;
 
         @media screen and (max-width: 1100px) {
             width: 350px;
+            text-align: center;
         }
 
         &--empty {

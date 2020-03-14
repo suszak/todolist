@@ -140,6 +140,13 @@
           transform: translateX(-60px) translateY(-25px);
 }
 
+@media screen and (max-width: 1100px) {
+  .task__label--active {
+    -webkit-transform: translateX(-120px) translateY(-25px);
+            transform: translateX(-120px) translateY(-25px);
+  }
+}
+
 .task__label--empty {
   color: #DC3B41;
 }
@@ -159,6 +166,7 @@
 @media screen and (max-width: 1100px) {
   .task__input {
     width: 350px;
+    text-align: center;
   }
 }
 
@@ -211,6 +219,13 @@
           transform: translateX(-60px) translateY(-25px);
 }
 
+@media screen and (max-width: 1100px) {
+  .city__label--active {
+    -webkit-transform: translateX(-120px) translateY(-25px);
+            transform: translateX(-120px) translateY(-25px);
+  }
+}
+
 .city__label--empty {
   color: #DC3B41;
 }
@@ -230,6 +245,7 @@
 @media screen and (max-width: 1100px) {
   .city__input {
     width: 350px;
+    text-align: center;
   }
 }
 
@@ -282,6 +298,13 @@
           transform: translateX(-60px) translateY(-25px);
 }
 
+@media screen and (max-width: 1100px) {
+  .deadline__label--active {
+    -webkit-transform: translateX(-120px) translateY(-25px);
+            transform: translateX(-120px) translateY(-25px);
+  }
+}
+
 .deadline__label--empty {
   color: #DC3B41;
 }
@@ -301,6 +324,7 @@
 @media screen and (max-width: 1100px) {
   .deadline__input {
     width: 350px;
+    text-align: center;
   }
 }
 
