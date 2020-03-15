@@ -18,7 +18,8 @@ class NavBar extends Component {
         });
         
         await this.props.updateDate(this.state.startDate);
-        document.querySelector('.deadline__label').classList.add('deadline__label--active');
+        clearTimeout(this.blurTimeoutDeadline);
+        // document.querySelector('.deadline__label').classList.add('deadline__label--active');
     }
     
 
@@ -48,6 +49,10 @@ class NavBar extends Component {
         }
     }
 
+    blurTimeoutTask;
+    blurTimeoutCity;
+    blurTimeoutDeadline;
+
     render() {
         return(
             <nav className="navigationBar">
@@ -55,19 +60,19 @@ class NavBar extends Component {
                     <div className='tooltip' id='taskTooltip'>It cannot be empty!</div>
                     <div className='tooltip' id='taskTooltipSign'>Don't use '|' inside!</div>
                     <label htmlFor='taskInput' className='task__label'>Type your task here...</label>
-                    <input type='text' name='taskInput' className='task__input' id='draftInput' onChange={this.props.updateDraft} onFocus={() => {this.inputFocused('task')}} onBlur={() => {this.inputUnfocused('task')}} value={this.props.state.draft}></input>
+                    <input type='text' name='taskInput' className='task__input' id='draftInput' onChange={this.props.updateDraft} onFocus={() => {this.inputFocused('task'); clearTimeout(this.blurTimeoutTask)}} onBlur={() => {this.blurTimeoutTask = setTimeout(() => {this.inputUnfocused('task')}, 5000);}} value={this.props.state.draft}></input>
                 </section>
                 <section className='city'>
                     <div className='tooltip' id='cityTooltip'>It cannot be empty!</div>
                     <div className='tooltip' id='cityTooltipSign'>Don't use '|' inside!</div>
                     <label htmlFor='cityInput' className='city__label'>Type location here...</label>
-                    <input type='text' name='cityInput' className='city__input' id='cityInput' onChange={this.props.updateCity} onFocus={() => {this.inputFocused('city')}} onBlur={() => {this.inputUnfocused('city')}} value={this.props.state.city}></input>
+                    <input type='text' name='cityInput' className='city__input' id='cityInput' onChange={this.props.updateCity} onFocus={() => {this.inputFocused('city'); clearTimeout(this.blurTimeoutCity)}} onBlur={() => {this.blurTimeoutCity = setTimeout(() => {this.inputUnfocused('city')}, 5000);}} value={this.props.state.city}></input>
                 </section>
                 <section className='deadline'>
                     <div className='tooltip' id='deadlineTooltipSign'>Don't use '|' inside!</div>
                     <div className='tooltip' id='deadlineTooltip'>It cannot be empty!</div>
                     <label htmlFor='deadlineInput' className='deadline__label'>Set deadline...</label>
-                    <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} changeDatePickerLabelFlag={this.changeDatePickerLabelFlag} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline')}} onBlur={() => {this.inputUnfocused('deadline')}} value={this.state.startDate} dateFormat='dd/MM/yyyy' withPortal/>
+                    <DatePicker selected={this.props.state.deadline} onChange={this.handleChange} id='deadlineInput' name='deadlineInput' className='deadline__input' onFocus={() => {this.inputFocused('deadline'); clearTimeout(this.blurTimeoutDeadline)}} onBlur={() => {this.blurTimeoutDeadline = setTimeout(() => {this.inputUnfocused('deadline')}, 5000);}} value={this.state.startDate} dateFormat='dd/MM/yyyy' withPortal/>
                 </section>
                 <button className='navigationBar__button' onClick={async () => { await this.props.updateTaskList(); this.moveLabel()}}>Add task</button>
             </nav>
