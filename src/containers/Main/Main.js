@@ -5,7 +5,7 @@ import ToDoList from '../../components/ToDoList/ToDoList'
 
 class Main extends Component {
     state = {
-        tasks: this.props.tasks,
+        tasks: '',
         draft: '',
         city: '',
         deadline: '',
@@ -148,8 +148,26 @@ class Main extends Component {
     }
 
     UNSAFE_componentWillMount() {
-        // sorting array
-        this.sortingTasks();
+        // read local storage
+        if(!localStorage.getItem('tasksArray')) {
+            this.setState({tasks: []});      
+        } else {
+            let tasksArrayString = localStorage.getItem('tasksArray');
+            tasksArrayString = tasksArrayString.split('|');
+    
+            let tasksArray = tasksArrayString.map((task) => {
+                return JSON.parse(task);
+            })
+    
+            tasksArray.forEach(element => {
+            element.deadline = new Date(element.deadline);
+            });
+    
+            this.setState({tasks: tasksArray});
+
+            // sorting array
+            this.sortingTasks();
+        }
     }
 
     render() {

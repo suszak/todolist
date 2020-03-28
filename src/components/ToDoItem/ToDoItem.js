@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './ToDoItem.css';
+import {
+    Link 
+} from 'react-router-dom'
 
 class ToDoItem extends Component {
     state = {
@@ -52,6 +55,9 @@ class ToDoItem extends Component {
                     <span className='weather__temp'>{this.state.temp}</span>
                     <span className='weather__info'>{this.state.weather}</span>
                 </section>
+                <span className='todoItem__edit'>
+                    <Link to={`/editTask/${this.props.task.id}`} ><i className="fas fa-edit"></i></Link>
+                </span>
                 <span onClick={() => {this.props.deleteTask(this.props.task.id)}} className='todoItem__delete'><i className='fas fa-minus-circle'></i></span>
             </section>
         );

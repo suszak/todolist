@@ -2,38 +2,39 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
+import Edit from '../Edit/Edit';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
+
 
 class App extends Component {
-  tasksList = [];
-
-  UNSAFE_componentWillMount() {
-    // read local storage
-    if(!localStorage.getItem('tasksArray')) {
-      this.tasksList = [];      
-    } else {
-      let tasksArrayString = localStorage.getItem('tasksArray');
-      tasksArrayString = tasksArrayString.split('|');
-
-      let tasksArray = tasksArrayString.map((task) => {
-          return JSON.parse(task);
-      })
-
-      tasksArray.forEach(element => {
-        element.deadline = new Date(element.deadline);
-      });
-
-      this.tasksList = tasksArray;
-    }
-  }
-
   render() {
     return(
-      <div className='app'>
-        <Header />
-        <Main tasks={this.tasksList}/>
-        <Footer />
-      </div>
+      <Router>
+        <div className='app'>
+          <Header />
+
+          <Switch>
+            <Route exact path="/todolist/">
+              <Main/>
+            </Route>
+
+            <Route path="/editTask/:taskId">
+              <Edit />
+            </Route>
+            
+            <Route path="*">
+              <p>Page not found.</p>
+            </Route>
+          </Switch>
+          
+          <Footer />
+        </div>
+      </Router>
     )
   }
 }

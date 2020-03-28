@@ -53,6 +53,12 @@ class NavBar extends Component {
     blurTimeoutCity;
     blurTimeoutDeadline;
 
+    componentWillUnmount() {
+        clearTimeout(this.blurTimeoutTask);
+        clearTimeout(this.blurTimeoutCity);
+        clearTimeout(this.blurTimeoutDeadline);
+    }
+
     render() {
         return(
             <nav className="navigationBar">
