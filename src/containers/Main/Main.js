@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Main.css';
 import NavBar from '../../components/NavBar/NavBar'
 import ToDoList from '../../components/ToDoList/ToDoList'
+import './Main.css';
 
 class Main extends Component {
     state = {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './ToDoItem.css';
 import {
     Link 
 } from 'react-router-dom'
+import './ToDoItem.css';
 
 class ToDoItem extends Component {
     state = {
