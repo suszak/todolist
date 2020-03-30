@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
+import {
+    Link 
+} from 'react-router-dom'
 import './SiteNotFound.css';
 
 class SiteNotFound extends Component {
@@ -19,18 +22,19 @@ class SiteNotFound extends Component {
     }
 
     componentDidMount() {
-        this.setState({countdownInterval: setInterval(this.countdown, 1000)})
+        // this.setState({countdownInterval: setInterval(this.countdown, 1000)})
     }
 
-    componentWillUnmount() {
-        clearInterval(this.state.countdownInterval);
+    async componentWillUnmount() {
+        await clearInterval(this.state.countdownInterval);
     }
 
     render() {
         return(
             <main className='SiteNotFound'>
-                <p>Site not found!</p>
-                <p>Redirect in {this.state.counter}</p>
+                <h1 className='SiteNotFound__title'>Site not found!</h1>
+                <p className='SiteNotFound__info'>Redirect in<span className='counter'>{this.state.counter}</span></p>
+                <Link to={`/`} ><button className='SiteNotFound__button'>Back</button></Link>
             </main>
         )
     }
