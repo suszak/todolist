@@ -32,6 +32,8 @@
   padding-top: 25px;
   border-bottom: solid 2px #86ABA8;
   font-size: 6rem;
+  color: #86ABA8;
+  text-shadow: #F7F0E5 1px 1px 0px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -54,6 +56,26 @@
   }
 }
 
+.SiteNotFound__main {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1  1 auto;
+          flex: 1  1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .SiteNotFound__info {
   width: 100%;
   display: -webkit-box;
@@ -62,7 +84,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 50px;
   font-size: 4rem;
 }
 

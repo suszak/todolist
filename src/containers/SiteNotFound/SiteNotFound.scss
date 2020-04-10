@@ -23,6 +23,8 @@ $yellow: #d48d24;
         padding-top: 25px;
         border-bottom: solid 2px $accent2;
         font-size: 6rem;
+        color: $accent2;
+        text-shadow: $font1 1px 1px 0px;
 
         @media screen and (max-width: 1100px) {
             padding: 0;
@@ -39,11 +41,19 @@ $yellow: #d48d24;
         }
     }
 
+    &__main {
+        width: 100%;
+        flex: 1  1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__info {
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 50px;
         font-size: 4rem;
 
         .counter {

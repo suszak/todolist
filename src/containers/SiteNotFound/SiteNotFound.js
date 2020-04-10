@@ -22,7 +22,7 @@ class SiteNotFound extends Component {
     }
 
     componentDidMount() {
-        // this.setState({countdownInterval: setInterval(this.countdown, 1000)})
+        this.setState({countdownInterval: setInterval(this.countdown, 1000)})
     }
 
     async componentWillUnmount() {
@@ -33,8 +33,10 @@ class SiteNotFound extends Component {
         return(
             <main className='SiteNotFound'>
                 <h1 className='SiteNotFound__title'>Site not found!</h1>
-                <p className='SiteNotFound__info'>Redirect in<span className='counter'>{this.state.counter}</span></p>
-                <Link to={`/`} ><button className='SiteNotFound__button'>Back</button></Link>
+                <section className='SiteNotFound__main'>
+                    <p className='SiteNotFound__info'>Redirect in<span className='counter'>{this.state.counter}</span></p>
+                    <Link to={`/`} ><button className='SiteNotFound__button'>Back</button></Link>
+                </section>
             </main>
         )
     }
