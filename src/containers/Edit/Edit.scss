@@ -4,3 +4,142 @@ $font1: #F7F0E5;
 $background1: #193153;
 $background2: #1A3F54;
 $yellow: #d48d24;
+
+.Edit {
+    min-height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__title {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $background1;
+        padding-top: 25px;
+        border-bottom: solid 2px $accent2;
+        font-size: 6rem;
+        color: $accent2;
+        text-shadow: $font1 1px 1px 0px;
+
+        @media screen and (max-width: 1100px) {
+            padding: 0;
+            height: 200px;
+        }
+    
+        @media screen and (max-width: 556px) {
+            padding: 0;
+            height: 275px;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 4rem;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        flex: 1  1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .taskName, .taskCity, .deadline {
+        position: relative;
+        width: 250px;
+        height: 50px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+
+        @media screen and (max-width: 1100px) {
+            margin-right: 0;
+        }
+
+        &__label {
+            position: absolute;
+            font-size: 1.7rem;
+            color: $accent2;
+            transition: 0.2s;
+            z-index: 1;
+    
+            &--active {
+                font-size: 1.2rem;
+                transform: translateX(-60px) translateY(-25px);
+    
+                @media screen and (max-width: 1100px){
+                    transform: translateX(-90px) translateY(-20px);
+                }
+            }
+    
+            &--empty {
+                color: $accent1;
+            }
+        }
+    
+    
+        &__input {
+            width: 250px;
+            height: 40px;
+            font-size: 1.7rem;
+            border: none;
+            border-bottom: 1px solid $accent2;
+            background: transparent;
+            color: $font1;
+            padding-left: 15px;
+            z-index: 2;
+    
+            @media screen and (max-width: 1100px) {
+                text-align: center;
+            }
+    
+            &--empty {
+                border-bottom-color: $accent1;
+            }
+        }
+    }
+
+    .taskName {
+        margin-top: 0;
+    }
+
+    .deadline {
+        &__label {
+            &--active {
+                font-size: 1.2rem;
+                transform: translateX(-52px) translateY(-25px);
+    
+                @media screen and (max-width: 1100px){
+                    transform: translateX(-82px) translateY(-20px);
+                }
+            }
+        }
+    }
+
+    .button {
+        width: 150px;
+        height: 30px;
+        margin-top: 25px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        border-radius: 50px;
+        border: none;
+        background-color: $accent2;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $background1;
+            color: $accent2;
+            border: 1px solid $accent2;
+        }
+    }
+}

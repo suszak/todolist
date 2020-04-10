@@ -1,1 +1,186 @@
-/* No CSS *//*# sourceMappingURL=Edit.css.map */
+.Edit {
+  min-height: 80vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Edit__title {
+  width: 100%;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #193153;
+  padding-top: 25px;
+  border-bottom: solid 2px #86ABA8;
+  font-size: 6rem;
+  color: #86ABA8;
+  text-shadow: #F7F0E5 1px 1px 0px;
+}
+
+@media screen and (max-width: 1100px) {
+  .Edit__title {
+    padding: 0;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .Edit__title {
+    padding: 0;
+    height: 275px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Edit__title {
+    font-size: 4rem;
+  }
+}
+
+.Edit__form {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1  1 auto;
+          flex: 1  1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Edit .taskName, .Edit .taskCity, .Edit .deadline {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 1100px) {
+  .Edit .taskName, .Edit .taskCity, .Edit .deadline {
+    margin-right: 0;
+  }
+}
+
+.Edit .taskName__label, .Edit .taskCity__label, .Edit .deadline__label {
+  position: absolute;
+  font-size: 1.7rem;
+  color: #86ABA8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.Edit .taskName__label--active, .Edit .taskCity__label--active, .Edit .deadline__label--active {
+  font-size: 1.2rem;
+  -webkit-transform: translateX(-60px) translateY(-25px);
+          transform: translateX(-60px) translateY(-25px);
+}
+
+@media screen and (max-width: 1100px) {
+  .Edit .taskName__label--active, .Edit .taskCity__label--active, .Edit .deadline__label--active {
+    -webkit-transform: translateX(-90px) translateY(-20px);
+            transform: translateX(-90px) translateY(-20px);
+  }
+}
+
+.Edit .taskName__label--empty, .Edit .taskCity__label--empty, .Edit .deadline__label--empty {
+  color: #DC3B41;
+}
+
+.Edit .taskName__input, .Edit .taskCity__input, .Edit .deadline__input {
+  width: 250px;
+  height: 40px;
+  font-size: 1.7rem;
+  border: none;
+  border-bottom: 1px solid #86ABA8;
+  background: transparent;
+  color: #F7F0E5;
+  padding-left: 15px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1100px) {
+  .Edit .taskName__input, .Edit .taskCity__input, .Edit .deadline__input {
+    text-align: center;
+  }
+}
+
+.Edit .taskName__input--empty, .Edit .taskCity__input--empty, .Edit .deadline__input--empty {
+  border-bottom-color: #DC3B41;
+}
+
+.Edit .taskName {
+  margin-top: 0;
+}
+
+.Edit .deadline__label--active {
+  font-size: 1.2rem;
+  -webkit-transform: translateX(-52px) translateY(-25px);
+          transform: translateX(-52px) translateY(-25px);
+}
+
+@media screen and (max-width: 1100px) {
+  .Edit .deadline__label--active {
+    -webkit-transform: translateX(-82px) translateY(-20px);
+            transform: translateX(-82px) translateY(-20px);
+  }
+}
+
+.Edit .button {
+  width: 150px;
+  height: 30px;
+  margin-top: 25px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  background-color: #86ABA8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.Edit .button:hover {
+  background-color: #193153;
+  color: #86ABA8;
+  border: 1px solid #86ABA8;
+}
+/*# sourceMappingURL=Edit.css.map */

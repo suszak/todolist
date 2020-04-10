@@ -29,7 +29,7 @@ class App extends Component {
             </Route>
 
             <Route path="/editTask/:taskId">
-              <Edit />
+              <Edit/>
             </Route>
             
             <Route path="*">

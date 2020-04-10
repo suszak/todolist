@@ -19,7 +19,6 @@ class NavBar extends Component {
         
         await this.props.updateDate(this.state.startDate);
         clearTimeout(this.blurTimeoutDeadline);
-        // document.querySelector('.deadline__label').classList.add('deadline__label--active');
     }
     
 
