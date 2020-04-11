@@ -33,7 +33,7 @@
   border-bottom: solid 2px #86ABA8;
   font-size: 6rem;
   color: #86ABA8;
-  text-shadow: #F7F0E5 1px 1px 0px;
+  text-shadow: -1px 0 #F7F0E5, 0 1px #F7F0E5, 1px 0 #F7F0E5, 0 -1px #F7F0E5;
 }
 
 @media screen and (max-width: 1100px) {

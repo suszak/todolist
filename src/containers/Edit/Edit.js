@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import SiteNotFound from '../SiteNotFound/SiteNotFound';
 import './Edit.css';
 
@@ -17,6 +18,11 @@ class Edit extends Component {
         location: PropTypes.object.isRequired,
         history: PropTypes.object.isRequired
     };
+
+    blurTimeoutTaskName;
+    blurTimeoutTaskCity;
+    blurTimeoutDeadline;
+    informationTimeout;
 
     UNSAFE_componentWillMount() {
         // read local storage
@@ -98,16 +104,6 @@ class Edit extends Component {
         }, () => {clearTimeout(this.blurTimeoutDeadline)});
     }
 
-    blurTimeoutTaskName;
-    blurTimeoutTaskCity;
-    blurTimeoutDeadline;
-
-    componentWillUnmount() {
-        clearTimeout(this.blurTimeoutTaskName);
-        clearTimeout(this.blurTimeoutTaskCity);
-        clearTimeout(this.blurTimeoutDeadline);
-    }
-
     updateTask = () => {
         if(!this.state.task[0].name || !this.state.task[0].city || !this.state.task[0].deadline || this.state.task[0].name.indexOf('|') !== -1 || this.state.task[0].city.indexOf('|') !== -1) {
             if(!this.state.task[0].name) {
@@ -161,10 +157,19 @@ class Edit extends Component {
 
                 // save to local storage
                 localStorage.setItem('tasksArray', localTasksArray);
+                document.querySelector('.information').style.display = 'flex';
+                this.informationTimeout = setTimeout(() => {document.querySelector('.information').style.display = 'none';}, 5100);
             }
             document.querySelector('#taskName').classList.remove('taskName__input--empty');
             document.querySelector('#taskCity').classList.remove('taskCity__input--empty');
         }
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.blurTimeoutTaskName);
+        clearTimeout(this.blurTimeoutTaskCity);
+        clearTimeout(this.blurTimeoutDeadline);
+        clearTimeout(this.informationTimeout);
     }
 
     render() {
@@ -196,7 +201,11 @@ class Edit extends Component {
                         </section>
 
                         <button className='button' onClick={async () => { await this.updateTask(); this.moveLabel()}}>Save changes</button>
+                        <Link to={`/`} ><button className='button'>Back</button></Link>
+                    </section>
 
+                    <section className='information'>
+                            <p className='information__text'>Changes have been saved.</p>
                     </section>
                 </main>
             )
