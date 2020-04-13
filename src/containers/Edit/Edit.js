@@ -201,7 +201,7 @@ class Edit extends Component {
                         </section>
 
                         <button className='button' onClick={async () => { await this.updateTask(); this.moveLabel()}}>Save changes</button>
-                        <Link to={`/`} ><button className='button'>Back</button></Link>
+                        <Link to={`/todolist`} ><button className='button'>Back</button></Link>
                     </section>
 
                     <section className='information'>

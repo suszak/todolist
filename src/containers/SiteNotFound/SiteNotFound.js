@@ -15,7 +15,7 @@ class SiteNotFound extends Component {
 
         if(count <= 1) {
             clearInterval(this.state.countdownInterval);
-            this.props.history.push('/');
+            this.props.history.push('/todolist');
         }
 
         this.setState({counter: this.state.counter - 1});
@@ -35,7 +35,7 @@ class SiteNotFound extends Component {
                 <h1 className='SiteNotFound__title'>Site not found!</h1>
                 <section className='SiteNotFound__main'>
                     <p className='SiteNotFound__info'>Redirect in<span className='counter'>{this.state.counter}</span></p>
-                    <Link to={`/`} ><button className='SiteNotFound__button'>Back</button></Link>
+                    <Link to={`/todolist`} ><button className='SiteNotFound__button'>Back</button></Link>
                 </section>
             </main>
         )
